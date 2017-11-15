@@ -1,0 +1,121 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Home | Welcome
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "Pickle Riick", :name => "author"}/
+    %link{:href => "./styles/style.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"}
+    %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"}
+    :css
+      /* Remove the navbar's default margin-bottom and rounded borders */ 
+      .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+      }
+      
+      /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+      .row.content {
+        height: 790px;
+      }
+      
+      /* Set gray background color and 100% height */
+      .sidenav {
+        padding-top: 20px;
+        background-color: #f1f1f1;
+        height: 100%;
+      }
+      .col-sm-6{
+        height: 500px;
+      }
+      
+      /* Set black background color, white text and some padding */
+      footer {
+        background-color: #555;
+        color: white;
+        padding: 15px;
+      }
+      
+      /* On small screens, set height to 'auto' for sidenav and grid */
+      @media screen and (max-width: 767px) {
+        .sidenav {
+          height: auto;
+          padding: 15px;
+        }
+        .row.content {height:auto;} 
+      }
+  %body
+    %nav.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          %button.navbar-toggle{"data-target" => "#myNavbar", "data-toggle" => "collapse", :type => "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "home.html"} Pickle Riick
+        %form.navbar-form{:role => "search"}
+          .input-group.add-on
+            %input#srch-term.form-control{:name => "srch-term", :placeholder => "Search", :type => "text"}/
+            .input-group-btn
+              %button.btn.btn-default{:type => "submit"}
+                %i.glyphicon.glyphicon-search
+        #myNavbar.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{:href => "#"} Home
+            %li
+              %a{:href => "#"} Profile
+            %li
+              %a{:href => "#"} Projects
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              %a{:href => "https://www.github.com"}
+                %span.glyphicon.glyphicon-log-in
+                Sign In
+    .container-fluid.text-center
+      .row.content
+        .col-sm-4.sidenav
+          %h2 Watched Project
+          %p
+            %a{:href => "#"} Recently watched
+          %p
+            %a{:href => "#"} Most Visited
+          %p
+            %a{:href => "#"} Shared Project
+        .col-sm-6
+          %h2 Manage Projects
+          %p
+            %a{:href => "#"} Create a new Project
+          %p
+            %a{:href => "#"} Manage a Project
+          %p
+            %a{:href => "#"} Modify/Delete a Project
+          %p
+            %a{:href => "#"} Share a Project
+          %br/
+          %br/
+          %br/
+          %br/
+          %br/
+          %hr/
+          %h2 Contributors
+          %p Lorem ipsum...
+          %p
+            %a{:href => "#"} Recently Contributor List
+          %p
+            %a{:href => "#"} Least Contributor
+        .col-sm-2.sidenav
+          %h2 Ideas
+          .well
+            %p Project Brainstorming Ideas
+          .well
+            %p Design Ideas
+          .well
+            %p Project Development Ideas
+    %footer.container-fluid.text-center
+      %p
+        %b Copyright Pickle Riick © 2017
